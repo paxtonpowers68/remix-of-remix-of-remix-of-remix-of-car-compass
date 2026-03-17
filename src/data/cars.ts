@@ -26,6 +26,19 @@ export interface Car {
   features: string[];
   location: string;
   description: string;
+  // Enriched fields
+  pros: string[];
+  cons: string[];
+  safetyRating: number; // out of 5
+  mpg: { city: number; highway: number };
+  marketValue: { low: number; average: number; high: number };
+  expertReview: string;
+  acceleration: string; // 0-60 mph
+  topSpeed: number; // mph
+  warranty: string;
+  trunkCapacity: string; // cubic feet
+  infotainment: string[];
+  safetyFeatures: string[];
 }
 
 export const cars: Car[] = [
@@ -48,6 +61,18 @@ export const cars: Car[] = [
     features: ["Bluetooth", "Cruise Control", "Backup Camera", "Lane Assist"],
     location: "New York",
     description: "Reliable and fuel-efficient sedan perfect for daily commuting.",
+    pros: ["Excellent fuel economy", "Strong resale value", "Spacious cabin", "Smooth ride quality"],
+    cons: ["Conservative styling", "No AWD option", "Road noise at highway speeds"],
+    safetyRating: 5,
+    mpg: { city: 28, highway: 39 },
+    marketValue: { low: 48000, average: 55000, high: 62000 },
+    expertReview: "The 2023 Toyota Camry continues to dominate the midsize sedan segment with its unbeatable combination of reliability, fuel efficiency, and comfort. The refreshed exterior brings subtle elegance while the interior sees upgraded materials and a larger 9-inch touchscreen. The 2.5L engine delivers adequate power for daily driving, and the 8-speed automatic shifts smoothly.",
+    acceleration: "7.6s",
+    topSpeed: 135,
+    warranty: "3yr/36k mi basic, 5yr/60k mi powertrain",
+    trunkCapacity: "15.1 cu ft",
+    infotainment: ["9-inch touchscreen", "Apple CarPlay", "Android Auto", "Amazon Alexa", "SiriusXM"],
+    safetyFeatures: ["Pre-Collision System", "Lane Departure Alert", "Dynamic Radar Cruise", "Blind Spot Monitor"],
   },
   {
     id: "2",
@@ -68,6 +93,18 @@ export const cars: Car[] = [
     features: ["Sport Mode", "Panoramic Roof", "Premium Audio", "Navigation"],
     location: "Los Angeles",
     description: "Fun and stylish compact car with premium features.",
+    pros: ["Go-kart-like handling", "Iconic design", "Premium interior", "Fun to drive"],
+    cons: ["Tight rear seats", "Firm ride", "Higher maintenance costs", "Small cargo area"],
+    safetyRating: 4,
+    mpg: { city: 28, highway: 36 },
+    marketValue: { low: 120000, average: 135000, high: 148000 },
+    expertReview: "The 2023 Mini Cooper S delivers pure driving joy in a compact package. Its turbocharged engine provides peppy acceleration, and the precise steering makes every corner a delight. The retro-modern interior oozes character with its toggle switches and circular dashboard display. It's not the most practical car, but it's one of the most engaging.",
+    acceleration: "6.4s",
+    topSpeed: 150,
+    warranty: "4yr/50k mi basic, 4yr/50k mi powertrain",
+    trunkCapacity: "8.7 cu ft",
+    infotainment: ["8.8-inch touchscreen", "Harman Kardon audio", "Wireless CarPlay", "Navigation", "Digital key"],
+    safetyFeatures: ["Forward Collision Warning", "Auto Emergency Braking", "Pedestrian Detection", "Rear Park Distance"],
   },
   {
     id: "3",
@@ -88,6 +125,18 @@ export const cars: Car[] = [
     features: ["AWD", "Apple CarPlay", "Heated Seats", "Adaptive Cruise"],
     location: "Chicago",
     description: "Versatile SUV with excellent fuel economy and spacious interior.",
+    pros: ["Best-in-class fuel economy", "Huge cargo space", "Refined ride", "Honda reliability"],
+    cons: ["Uninspiring acceleration", "Plain base interior", "CVT can drone"],
+    safetyRating: 5,
+    mpg: { city: 40, highway: 34 },
+    marketValue: { low: 46000, average: 53000, high: 59000 },
+    expertReview: "Honda's best-selling CR-V gets a complete redesign for 2023. The hybrid powertrain is now the star of the lineup, delivering an impressive 40 mpg in the city. The interior is a massive leap forward with premium materials, a clean dashboard layout, and significantly more cargo room. It's the complete package for families.",
+    acceleration: "7.8s",
+    topSpeed: 127,
+    warranty: "3yr/36k mi basic, 5yr/60k mi powertrain",
+    trunkCapacity: "36.3 cu ft",
+    infotainment: ["9-inch touchscreen", "Apple CarPlay", "Android Auto", "Bose audio", "Wireless charging"],
+    safetyFeatures: ["Collision Mitigation Braking", "Road Departure Mitigation", "Adaptive Cruise", "Traffic Sign Recognition"],
   },
   {
     id: "4",
@@ -108,6 +157,18 @@ export const cars: Car[] = [
     features: ["Autopilot", "Full Self-Driving", "Premium Interior", "Supercharging"],
     location: "San Francisco",
     description: "Cutting-edge electric sedan with impressive range and technology.",
+    pros: ["Instant torque", "358-mile range", "Supercharger network", "Over-the-air updates"],
+    cons: ["Build quality inconsistencies", "No CarPlay/Android Auto", "Spartan interior", "Service availability"],
+    safetyRating: 5,
+    mpg: { city: 138, highway: 126 }, // MPGe
+    marketValue: { low: 45000, average: 53000, high: 58000 },
+    expertReview: "The refreshed 2023 Tesla Model 3 'Highland' brings a more refined interior with ambient lighting, improved sound insulation, and a rear display for passengers. The minimalist 15.4-inch screen continues to control everything. Acceleration is thrilling, and the Supercharger network remains Tesla's killer advantage for long-distance travel.",
+    acceleration: "5.8s",
+    topSpeed: 140,
+    warranty: "4yr/50k mi basic, 8yr/120k mi battery",
+    trunkCapacity: "23.1 cu ft",
+    infotainment: ["15.4-inch touchscreen", "Rear 8-inch display", "Premium audio", "Netflix/YouTube", "Spotify"],
+    safetyFeatures: ["Autopilot", "Auto Emergency Braking", "360° cameras", "Blind Spot Warning", "Lane Keep Assist"],
   },
   {
     id: "5",
@@ -128,6 +189,18 @@ export const cars: Car[] = [
     features: ["Sport Package", "iDrive", "Leather Seats", "M Sport Brakes"],
     location: "Miami",
     description: "The ultimate driving machine, combining luxury with performance.",
+    pros: ["Superb handling", "Powerful turbo engine", "Premium cabin", "Cutting-edge tech"],
+    cons: ["Subscription-heavy features", "Firm ride on sport suspension", "Rear seat headroom"],
+    safetyRating: 5,
+    mpg: { city: 26, highway: 36 },
+    marketValue: { low: 118000, average: 133000, high: 145000 },
+    expertReview: "The BMW 330i remains the benchmark for sport sedans. The chassis balance is sublime, the steering is precise, and the turbocharged four-cylinder punches well above its weight. The latest iDrive 8 system with its curved display is intuitive and beautiful. For those who love driving, there's simply nothing better in this class.",
+    acceleration: "5.6s",
+    topSpeed: 155,
+    warranty: "4yr/50k mi basic, 4yr/50k mi powertrain",
+    trunkCapacity: "13.0 cu ft",
+    infotainment: ["14.9-inch curved display", "iDrive 8", "Wireless CarPlay", "Harman Kardon", "Digital key+"],
+    safetyFeatures: ["Frontal Collision Warning", "Active Blind Spot", "Lane Departure Warning", "Parking Assistant"],
   },
   {
     id: "6",
@@ -148,6 +221,18 @@ export const cars: Car[] = [
     features: ["4x4", "Removable Top", "Off-Road Package", "Trail Rated"],
     location: "Denver",
     description: "Iconic off-road SUV built for adventure and exploration.",
+    pros: ["Unmatched off-road capability", "Open-air freedom", "Iconic design", "Strong community"],
+    cons: ["Poor fuel economy", "Noisy on highway", "Choppy ride on pavement", "Wind buffeting"],
+    safetyRating: 3,
+    mpg: { city: 20, highway: 24 },
+    marketValue: { low: 135000, average: 150000, high: 168000 },
+    expertReview: "The Wrangler isn't for everyone—and that's exactly the point. It's designed for those who want genuine off-road capability with doors and a top that come off. The Rubicon trim conquers trails that would stop most SUVs dead. On-road manners have improved over the years, but this is still a vehicle that rewards adventure over comfort.",
+    acceleration: "7.4s",
+    topSpeed: 112,
+    warranty: "3yr/36k mi basic, 5yr/60k mi powertrain",
+    trunkCapacity: "31.7 cu ft",
+    infotainment: ["12.3-inch Uconnect 5", "Apple CarPlay", "Android Auto", "Off-road pages", "Trail maps"],
+    safetyFeatures: ["Electronic Stability Control", "Sway Bar Disconnect", "Hill Start Assist", "Blind Spot Monitor"],
   },
   {
     id: "7",
@@ -168,6 +253,18 @@ export const cars: Car[] = [
     features: ["Performance Package", "Active Exhaust", "MagneRide", "Recaro Seats"],
     location: "Dallas",
     description: "American muscle car icon with exhilarating V8 performance.",
+    pros: ["Thunderous V8 exhaust note", "Exceptional value for power", "Track-capable", "Manual transmission available"],
+    cons: ["Rear seat is useless", "Thirsty engine", "Heavy", "Rearward visibility"],
+    safetyRating: 4,
+    mpg: { city: 15, highway: 24 },
+    marketValue: { low: 195000, average: 220000, high: 248000 },
+    expertReview: "The all-new 7th generation Mustang GT with its Coyote V8 is a proper sports car. The new chassis is stiffer, the suspension is more refined, and the available MagneRide dampers transform the ride. Fire up the engine with the active exhaust in Sport+ mode and the neighborhood knows exactly what's coming. It's raw, exciting, and unapologetically American.",
+    acceleration: "4.2s",
+    topSpeed: 163,
+    warranty: "3yr/36k mi basic, 5yr/60k mi powertrain",
+    trunkCapacity: "13.5 cu ft",
+    infotainment: ["13.2-inch touchscreen", "SYNC 4", "B&O audio", "Digital instruments", "Track apps"],
+    safetyFeatures: ["Pre-Collision Assist", "Post-Collision Braking", "Lane Keeping System", "Rear View Camera"],
   },
   {
     id: "8",
@@ -188,5 +285,17 @@ export const cars: Car[] = [
     features: ["MBUX", "Burmester Audio", "Air Suspension", "360 Camera"],
     location: "Seattle",
     description: "Luxurious sedan offering the pinnacle of comfort and technology.",
+    pros: ["S-Class-level tech", "Stunning interior", "Whisper-quiet cabin", "Smooth ride"],
+    cons: ["Expensive options", "Complex infotainment", "Smaller trunk than rivals", "Subscription features"],
+    safetyRating: 5,
+    mpg: { city: 25, highway: 35 },
+    marketValue: { low: 315000, average: 350000, high: 385000 },
+    expertReview: "The W206 C-Class is essentially a mini S-Class. The portrait-style 11.9-inch MBUX screen dominates the center console, while the 12.3-inch digital cluster provides crisp instrumentation. The cabin is lavished with ambient lighting, premium leather, and real wood trim. The mild-hybrid powertrain adds efficiency without sacrificing the smooth, composed driving character Mercedes is known for.",
+    acceleration: "5.9s",
+    topSpeed: 155,
+    warranty: "4yr/50k mi basic, 4yr/50k mi powertrain",
+    trunkCapacity: "12.6 cu ft",
+    infotainment: ["11.9-inch MBUX portrait", "12.3-inch digital cluster", "Burmester 3D", "Hey Mercedes voice", "AR Navigation"],
+    safetyFeatures: ["Active Distance Assist", "Active Steering Assist", "Active Blind Spot", "Evasive Steering Assist"],
   },
 ];
